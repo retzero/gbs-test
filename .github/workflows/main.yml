@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    name: build
+    runs-on: [linux-latest]
+    timeout-minutes: 5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run build
+      uses: retzero/gbs-build-action@master
+      with:  
+        gbs_conf: ".github/workflows/gbs.conf"
+        profile: "tizen"
+        architecture: "armv7l"
