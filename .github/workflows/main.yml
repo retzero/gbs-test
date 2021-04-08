@@ -23,3 +23,6 @@ jobs:
         gbs_conf: ".github/workflows/gbs.conf"
         profile: "tizen"
         architecture: "armv7l"
+
+    - name: check build
+      run: pwd && ls -al
