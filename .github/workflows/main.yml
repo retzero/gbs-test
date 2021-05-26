@@ -23,6 +23,9 @@ jobs:
         gbs_conf: ".github/workflows/gbs.conf"
         profile: "tizen"
         architecture: "armv7l"
+        package_list: "alsa-utils"
+        output_dir: "my-build-artifacts"
 
     - name: check build
-      run: pwd && ls -al
+      run: pwd && ls -al && ls -al my-build-artifacts
+
